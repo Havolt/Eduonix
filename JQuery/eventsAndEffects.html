@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Events and Effects</title>
+    <style>
+        body, html{
+            background: #f4f4f4;
+        }
+        .red{color:red}
+        .contain{
+            background: #ffffff;
+            padding: 10px;
+            border-radius: 20px;
+            width: 60%;
+            margin: 0 auto;
+        }
+        .contain > button, .contain > h1{
+            display: block;
+            margin: 10px auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1 class="myClass">This is a heading</h1>
+
+    <h1>This is a another header</h1>
+
+    <div class = "contain">
+        <button>Change Text</button>
+
+        <h1>This is the text to change</h1>
+    </div>
+
+    <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous">
+    </script>
+
+    <script>
+        $(document).ready(function(){
+            $('.myClass').addClass('red');
+            $('.myClass').html('This heading is from JQuery');
+            $('.contain > button').click(function(){
+                $('.contain > h1').html('I have been changed!').slideToggle(400);
+            })
+        });
+        
+
+    </script>
+</body>
+</html>
